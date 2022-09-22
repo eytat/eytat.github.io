@@ -1,1 +1,17 @@
-/* No commentto NIPPON*/
+.column {
+	float:		left;
+	width:		33.33%;
+}
+
+.row::after {
+	content:	"";
+	display:	table;
+	clear:		both;
+}
+
+/* Responsive layout to stack the columns on top of each other for 600px wide or less screens */
+@media screen and (max-width: 600px) {
+	.column {
+		width:	100%;
+	}
+}
