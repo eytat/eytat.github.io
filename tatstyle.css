@@ -1,17 +1,40 @@
 .column {
-	float:		left;
-	width:		33.33%;
+	float:			left;
+	border-style:	solid;
+	border-color: 	red;
+	width:			33.33%;
+}
+
+.overlay {
+	transition: 	.5s ease;
+	opacity: 		0;
+	position: 		absolute;
+	top:			50%;
+	left:			50%;
+}
+
+.column:hover {
+	position:		0.3;
+}
+
+.column:hover {
+	opacity: 		1;
 }
 
 .row::after {
-	content:	"";
-	display:	table;
-	clear:		both;
+	content:		"";
+	display:		table;
+	clear:			both;
+}
+
+.overlay_text {
+	font-size: 		16px;
+	padding:		16px 32px;
 }
 
 /* Responsive layout to stack the columns on top of each other for 600px wide or less screens */
 @media screen and (max-width: 600px) {
 	.column {
-		width:	100%;
+		width:		100%;
 	}
 }
