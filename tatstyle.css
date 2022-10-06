@@ -1,17 +1,57 @@
-* {
-	box-sizing: border-box;
+body {
+	margin:				0px;
+	padding:			0px;
+	/* border:				5px dashed blue; */
 }
 
-body {
-	margin:				0;
+.content {
+	/*Deben ser igual al width de los sidebars*/
+	top:				0;
+	left:				200px;
+	right:				200px;
+	bottom:				0;
+	position:			fixed;
+	height:				100%;
+	overflow-y:			hidden;
+	/* border:				2px solid yellow; */
+	background-color:	burlywood;
+}
+
+.split {
+	height:				50%;
+	width:				100%;
+	position:			absolute;
+	/* border:				2px solid #006100; */
+}
+
+.sp-top {
+	top:				0;
+	background-color:	coral;
+}
+
+.sp-bottom {
+	bottom:				0;
+	display:			table;
+	background-color:	cornflowerblue;
+}
+
+.sp-bottom::after {
+	content:			"";
+	clear:				both;
+}
+
+.centered {
+	position:			absolute;
+	top:				50%;
+	left:				50%;
+	transform:			translate(-50%, -50%);
 }
 
 .column {
 	float:				left;
+	width:				33.33%;
+	/* padding:			5px; */
 	position:			relative;
-	width:				20%;
-	/* border-style:		solid;
-	border-color: 		red; */
 }
 
 .overlay_image
@@ -47,21 +87,9 @@ body {
 	padding:			16px 32px;
 }
 
-.row::after {
-	content:			"";
-	/* display:			table; */
-	clear:				both;
-}
-
-.content {
-	margin-left:		200px;	/*Debe ser igual al width de .leftsideber*/
-	/* position:			relative; */
-}
-
 .leftsidebar {
 	margin:				0;
 	padding:			0;
-	align-items:		center;
 	height:				100%;
 	width:				200px;
 	position:			fixed;
@@ -70,23 +98,23 @@ body {
 	top:				0;
 	left:				0;
 	background-color:	grey;
-	/* overflow-x:			hidden; */
 	display:			block;
 }
 
 .leftsidebar-profile {
-	margin:				50px;
-	align-self:			center;
-	width:				80%;
+	margin:				25%;
+	width:				100%;
 }
 
 .leftsidebar-footer {
-	margin-bottom:		50px;
-	margin-left:		75px;
+	margin:				45%;
+	width:				100%;
 	position:			absolute;
 	bottom:				0;
 }
 .rightsidebar {
+	margin:				0;
+	padding:			0;
 	height:				100%;
 	width:				200px;
 	position:			fixed;
@@ -95,8 +123,18 @@ body {
 	top:				0;
 	right:				0;
 	background-color:	grey;
-	overflow-x:			hidden;
+	/* overflow-x:		hidden; */
 	display:			block;
+}
+.rightsidebar-header {
+	margin-top:			25%;
+	margin-left:		45%;
+	width:				100%;
+}
+
+a {
+	text-decoration:	none;
+	color:				black;
 }
 
 ul {
