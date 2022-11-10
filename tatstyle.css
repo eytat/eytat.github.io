@@ -18,7 +18,7 @@ body {
 }
 
 .split {
-	height:				50%;
+	height:				100%;
 	width:				100%;
 	position:			absolute;
 	/* border:				2px solid #006100; */
@@ -29,61 +29,11 @@ body {
 	background-color:	coral;
 }
 
-.sp-bottom {
-	bottom:				0;
-	display:			table;
-	background-color:	cornflowerblue;
-}
-
-.sp-bottom::after {
-	content:			"";
-	clear:				both;
-}
-
 .centered {
 	position:			absolute;
 	top:				50%;
 	left:				50%;
 	transform:			translate(-50%, -50%);
-}
-
-.column {
-	float:				left;
-	width:				33.33%;
-	position:			relative;
-}
-
-.overlay_image
-{
-	opacity:			1;
-	display:			block;
-	width:				100%;
-	height: 			auto;
-	transition:			.5s ease;
-	backface-visibility: hidden;
-}
-
-.overlay {
-	transition: 		.5s ease;
-	opacity: 			0;
-	position: 			absolute;
-	top:				50%;
-	left:				50%;
-	transform: 			translate(-50%, -50%);
-	-ms-transform: 		translate(-50%, -50%);
-}
-
-.column:hover .overlay_image {
-	opacity:			0.3;
-}
-
-.column:hover .overlay {
-	opacity: 			1;
-}
-
-.overlay_text {
-	font-size: 			16px;
-	padding:			16px 32px;
 }
 
 .leftsidebar {
@@ -142,9 +92,107 @@ ul {
 	padding:			0;
 }
 
+.diamond {
+	position:			absolute;
+	transform:			translate(-50%, -50%);
+	height:				350px;
+	width:				350px;
+	line-height:		350px;
+	text-align:			center;
+	/* margin:				10px 40px; */
+}
+
+.diamond:before {
+	position:			absolute;
+	content:			'';
+	top:				0px;
+	left:				0px;
+	height:				100%;
+	width:				100%;
+	transform:			rotateX(45deg) rotateZ(45deg);
+	background-color:	white;
+	box-shadow:			0px 0px 12px gray;
+	z-index:			-1;
+}
+
+.diamond:after {
+	position:			absolute;
+	top:				10px;
+	left:				10px;
+	content:			'';
+	height:				calc(100% - 22px);  /* -22px is 2 * 10px gap on either side - 2px border on either side */
+	width:				calc(100% - 22px);  /* -22px is 2 * 10px gap on either side - 2px border on either side */
+	border:				1px solid orange;
+	transform:			rotateX(45deg) rotateZ(45deg);
+}
+
+div#dm-top {
+	top:				36%;
+	left:				50%;
+}
+
+/**/
+div#dm-right {
+	top:				50%;
+	left:				62%;
+}
+
+div#dm-bottom {
+	top:				64%;
+	left:				50%;
+}
+
+/**/
+div#dm-left {
+	top:				50%;
+	left:				38%;
+}
+
+/*Orbital things*/
+
+#rotator {
+	position:			relative;
+	top:				7.5%;
+	margin-left:		24%;
+	width:				70rem;
+	height:				70rem;
+	animation:			rotations 2s linear infinite;
+	border:				3px white dashed;
+	border-radius:		50%;
+}
+
+/* #rotator:before, #rotator:after {
+	position: absolute;
+	content: '';
+	display: block;
+	height: 3rem;
+	width: 3rem;
+	animation: inherit;
+	animation-direction: reverse;
+} */
+
+#rotator:after {
+	position: absolute;
+	content: '';
+	display: block;
+	height: 3rem;
+	width: 3rem;
+	animation: inherit;
+	animation-direction: reverse;
+
+	background-color: green;
+	bottom: -.25rem;
+	right: -.25rem;
+}
+
+@keyframes rotations {
+	to { transform: rotate(360deg) }
+}
+
+
 /* Responsive layout to stack the columns on top of each other for 600px wide or less screens */
 @media screen and (max-width: 600px) {
 	.column {
-		width:			100%;
+		width:		100%;
 	}
 }
