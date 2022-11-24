@@ -1,3 +1,7 @@
+* {
+	box-sizing: border-box;
+}
+
 body {
 	margin:				0px;
 	padding:			0px;
@@ -80,54 +84,30 @@ button {
 
 .diamond {
 	position:			fixed;
-	height:				350px;
-	width:				500px;
+	float:				left;
+	height:				24%;/*250px;*/
+	width:				19.55%;/*400px;*/
 	clip-path:			polygon(50% 0%, 100% 50%, 50% 100%, 0% 50%);
 	background-color:	white;
 	box-shadow:			0px 0px 12px gray;
 	text-align:			center;
-	/* transition:			1s; */
+	transition:			1s;
 }
 
 .diamond:hover {
-	/* background-color:	gray;
-	transform:			scale(90%); */
-	transition:			none;
-}
-
-.diamond:before {
-	position:			absolute;
-	top:				0;
-	left:				0;
-	content:			'';
-	height:				100%;
-	width:				100%;
-	background-color:	beige;
-	z-index:			-1;
-
-	transition:			1s;
-	text-align:			center;
-}
-
-.diamond:hover:before {
-	/* transition:			none; */
-	top:				10px;
-	left:				85px;
-	transform:			scale(90%) rotateX(45deg) rotateZ(45deg);
-	height:				calc(350px - 22px);
-	width:				calc(350px - 22px);
 	background-color:	gray;
+	transform:			scale(90%);
 }
 
 .diamond:after {
 	position:			absolute;
-	top:				10px;
-	left:				85px;
+	top:				-2px;
+	left:				72px;
 	content:			'';
-	transform:			rotateX(45deg) rotateZ(45deg);
-	height:				calc(350px - 22px);
-	width:				calc(350px - 22px);
-	border:				1px solid orange;
+	transform:			rotateX(50deg) rotateZ(-45deg) ;
+	height:				calc(275px - 22px);
+	width:				calc(275px - 22px);
+	border:				1px solid coral;
 	transition:			scale 5s, rotate 1.8s;
 	transition-delay:	0s, 0s;
 }
@@ -139,7 +119,7 @@ button {
 }
 
 button#dm-top {
-	top:				23.05%;
+	top:				24.5%;
 	left:				40.22%;
 }
 
@@ -149,7 +129,7 @@ button#dm-right {
 }
 
 button#dm-bottom {
-	top:				51.05%;
+	top:				49.60%;
 	left:				40.22%;
 }
 
@@ -159,14 +139,13 @@ button#dm-left {
 }
 
 /*Orbital things*/
-
 #rotator {
 	position:			relative;
-	top:				7.5%;
-	margin-left:		24%;
-	width:				70rem;
-	height:				70rem;
-	animation:			rotations 15s linear infinite;
+	margin:				2.5% auto;
+	width:				55%;/*60rem;*/
+	height:				90%;/*60rem;*/
+	/* content:			''; */
+	/* animation:			rotations 15s linear infinite; */
 	border:				3px white solid;
 	border-radius:		50%;
 	z-index:			-1;
@@ -186,8 +165,8 @@ button#dm-left {
 	border-radius:		100%;
 	border:				8px coral solid;
 	background-color: black;
-	bottom:				8.35rem; /*8.75rem*/
-	right:				8.35rem;
+	bottom:				6.75rem; /*8.75rem*/
+	right:				6.75rem;
 }
 
 @keyframes rotations {
@@ -196,65 +175,8 @@ button#dm-left {
 
 
 /* Responsive layout to stack the columns on top of each other for 600px wide or less screens */
-@media screen and (max-width: 600px) {
-	.column {
-		width:		100%;
+/* @media screen and (max-width: 600px) {
+	.diamond {
+		scale:		50%;
 	}
-}
-
-.diamond2 {
-	position:			absolute;
-	height:				350px;
-	width:				500px;
-	clip-path:			polygon(50% 0%, 100% 50%, 50% 100%, 0% 50%);
-	background-color:	black;
-	box-shadow:			0px 0px 12px gray;
-	transition:			1s;
-	text-align:			center;
-}
-
-.diamond2:hover {
-	background-color:	gray;
-	transform:			scale(90%);
-}
-
-.diamond2:after {
-	position:			absolute;
-	top:				10px;
-	left:				85px;
-	content:			'';
-	transform:			rotateX(45deg) rotateZ(45deg);
-	height:				calc(350px - 22px);
-	width:				calc(350px - 22px);
-	border:				1px solid orange;
-	transition:			scale 5s, rotate 1.8s;
-	transition-delay:	0s, 0s;
-}
-
-.diamond2:hover::after {
-	scale:				0.5;
-	rotate:				180deg;
-	transition:			scale 1.8s, rotate 5s;
-}
-
-button#dm-top2 {
-	top:				22.9%;
-	left:				38.4%;
-}
-
-/**/
-button#dm-right2 {
-	top:				36.9%;
-	left:				50.4%;
-}
-
-button#dm-bottom2 {
-	top:				50.9%;
-	left:				38.4%;
-}
-
-/**/
-button#dm-left2 {
-	top:				36.9%;
-	left:				26.4%;
-}
+} */
